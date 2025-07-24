@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dip Kumar Saha - Professional Profile</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* Navigation Styles */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+nav h1 {
+  color: #2c3e50;
+  font-size: 1.8em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu a:hover {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.menu a:active {
+  transform: translateY(0);
+}
+
+/* Header Styles */
+header {
+  margin-top: 80px;
+  text-align: center;
+  padding: 100px 20px 80px;
+  background: transparent;
+}
+
+header h1 {
+  font-size: 3.5em;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
+}
+
+header p {
+  font-size: 1.3em;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Content Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Styles */
+section {
+  margin: 40px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.section-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.section-title {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+/* Personal Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail-item {
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 5px solid #667eea;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.detail-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+}
+
+.detail-item:hover::before {
+  opacity: 1;
+}
+
+.detail-item .icon {
+  font-size: 1.5em;
+  margin-right: 10px;
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+}
+
+.detail-item .label {
+  font-weight: 700;
+  color: #2c3e50;
+  display: inline-block;
+  min-width: 100px;
+}
+
+.detail-item .value {
+  color: #34495e;
+  font-size: 1.1em;
+  position: relative;
+  z-index: 1;
+}
+
+/* Placeholder sections for navigation */
+.placeholder-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+  margin: 40px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.placeholder-section h2 {
+  color: white;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.placeholder-section p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+  
+  .menu {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  header {
+    margin-top: 120px;
+    padding: 60px 20px 40px;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+  }
+  
+  .section-card {
+    padding: 30px 20px;
+  }
+  
+  .section-title {
+    font-size: 2em;
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .detail-item {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav h1 {
+    font-size: 1.4em;
+  }
+  
+  .menu a {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+  
+  header h1 {
+    font-size: 2em;
+  }
+  
+  header p {
+    font-size: 1.1em;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add subtle parallax effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: -1;
+}
+</style>
+</head>
+<body>
+  <nav>
+    <div>
+      <h1>Dip Kumar Saha</h1>
+    </div>
+    <div class="menu">
+      <a href="#personal-details">Personal Details</a>
+      <a href="#about-me">About Me</a>
+      <a href="#class-details">Class Details</a>
+      <a href="#favourites">Favourites</a>
+      <a href="#interests">Interests</a>
+      <a href="#neighbourhood">Neighbourhood</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Welcome to My Professional Profile</h1>
+    <p>Discover my journey, skills, and aspirations in the world of technology and innovation.</p>
+  </header>
+
+  <div class="container">
+    <section id="personal-details">
+      <div class="section-card">
+        <h2 class="section-title">Personal Details</h2>
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="icon">👤</span>
+            <span class="label">Name:</span>
+            <div class="value">Dip Kumar Saha</div>
+          </div>
+          <div class="detail-item">
+            <span class="icon">📅</span>
+            <span class="label">Date of Birth:</span>
+            <div class="value">12th October 2003</div>
+          </div>
+          <div class="detail-item">
+            <span class="icon">📍</span>
+            <span class="label">Address:</span>
+            <div class="value">Siliguri, West Bengal, India</div>
+          </div>
+          <div class="detail-item">
+            <span class="icon">📞</span>
+            <span class="label">Phone:</span>
+            <div class="value">+91 98765 43210</div>
+          </div>
+          <div class="detail-item">
+            <span class="icon">📧</span>
+            <span class="label">Email:</span>
+            <div class="value">dipkumar@example.com</div>
+          </div>
+          <div class="detail-item">
+            <span class="icon">🚻</span>
+            <span class="label">Gender:</span>
+            <div class="value">Male</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-me" class="placeholder-section">
+      <h2>About Me</h2>
+      <p>This section will showcase my background, education, and professional journey.</p>
+    </section>
+
+    <section id="class-details" class="placeholder-section">
+      <h2>Class Details</h2>
+      <p>Information about my academic pursuits and current educational status.</p>
+    </section>
+
+    <section id="favourites" class="placeholder-section">
+      <h2>Favourites</h2>
+      <p>My favorite books, movies, technologies, and personal preferences.</p>
+    </section>
+
+    <section id="interests" class="placeholder-section">
+      <h2>Interests</h2>
+      <p>My hobbies, passions, and areas of interest in technology and beyond.</p>
+    </section>
+
+    <section id="neighbourhood" class="placeholder-section">
+      <h2>Neighbourhood</h2>
+      <p>Information about my local community and surroundings in Siliguri.</p>
+    </section>
+  </div>
+</body>
+</html>
